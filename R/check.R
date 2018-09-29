@@ -38,7 +38,7 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   
   if(!is.null(by)) {
     diff <- diff(x[[habitat]])
-    if(!all(vapply(diff, all.equal, TRUE, diff[1], tolerance = 1e-07)))
+    if(!all(vapply(diff, all.equal, TRUE, diff[1], tolerance = 1e-14)))
       err("column '", habitat, "' of ", x_name, " must have equal increments")
     
     if(hsi_by(x[[habitat]]) != by) 

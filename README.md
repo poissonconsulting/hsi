@@ -10,17 +10,29 @@ status](https://travis-ci.org/poissonconsulting/hsi.svg?branch=master)](https://
 status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/hsi?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/hsi)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/hsi/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/hsi?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-The goal of hsi is to …
+`hsi` is an R package to manipulate Habitat Suitability (HSI) data
+frames. A HSI data frame is a data frame with a Habitat and Index column
+where the Habitat values are an increasing equidistant sequence of
+numbers that includes 0 or if extended would include 0 and the index
+values are between 0 and 1.
 
 ## Installation
 
-You can install the released version of hsi from
-[CRAN](https://CRAN.R-project.org) with:
+To install the latest development version from
+[GitHub](https://github.com/poissonconsulting/hsi)
 
-``` r
-install.packages("hsi")
-```
+    # install.packages("devtools")
+    devtools::install_github("poissonconsulting/hsi")
+
+To install the latest development version from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+    # install.packages("drat")
+    drat::addRepo("poissonconsulting")
+    install.packages("hsi")
 
 Please note that the ‘hsi’ project is released with a [Contributor Code
 of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you

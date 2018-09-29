@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HSI Data — hsi_data • hsi</title>
+<title>HSI Set By — hsi_set_by • hsi</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="HSI Data — hsi_data" />
+<meta property="og:title" content="HSI Set By — hsi_set_by" />
 
-<meta property="og:description" content="HSI Data" />
+<meta property="og:description" content="HSI Set By" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -92,44 +92,63 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>HSI Data</h1>
+    <h1>HSI Set By</h1>
     
-    <div class="hidden name"><code>hsi_data.Rd</code></div>
+    <div class="hidden name"><code>hsi_set_by.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>HSI Data</p>
+    <p>HSI Set By</p>
     
     </div>
 
-    <pre class="usage"><span class='no'>hsi_data</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <pre class="usage"><span class='fu'>hsi_set_by</span>(<span class='no'>x</span>, <span class='kw'>habitat</span> <span class='kw'>=</span> <span class='st'>"Habitat"</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"Index"</span>,
+  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'><a href='hsi_by.html'>hsi_by</a></span>(<span class='no'>x</span><span class='kw'>[[</span><span class='no'>habitat</span>]]))</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>The object to check.</p></td>
+    </tr>
+    <tr>
+      <th>habitat</th>
+      <td><p>A string of the name of the column with habitat values.</p></td>
+    </tr>
+    <tr>
+      <th>index</th>
+      <td><p>A string of the name of the column with index values.</p></td>
+    </tr>
+    <tr>
+      <th>by</th>
+      <td><p>A non-negative number of the habitat increments.
+If by = NULL then does not check habitat increments</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 10 rows and 2 columns.</p>
+    <p>A HSI data.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>hsi_data</span></div><div class='output co'>#&gt; # A tibble: 10 x 2
-#&gt;    Habitat Index
-#&gt;      &lt;dbl&gt; &lt;dbl&gt;
-#&gt;  1       1   1  
-#&gt;  2       2   1  
-#&gt;  3       3   1  
-#&gt;  4       4   0.5
-#&gt;  5       5   0.5
-#&gt;  6       6   0.4
-#&gt;  7       7   0.3
-#&gt;  8       8   0.2
-#&gt;  9       9   0.1
-#&gt; 10      10   0  </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>hsi_set_by</span>(<span class='no'>hsi_data</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
+#&gt;   Habitat Index
+#&gt;     &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1       2   1  
+#&gt; 2       4   0.5
+#&gt; 3       6   0.4
+#&gt; 4       8   0.2
+#&gt; 5      10   0  </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
+      <li><a href="#value">Value</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -15,6 +15,7 @@ Imports:
     checkr
 Suggests: 
     covr,
+    ggplot2,
     testthat,
     tibble
 Remotes:

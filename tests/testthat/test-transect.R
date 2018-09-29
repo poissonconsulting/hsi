@@ -13,7 +13,11 @@ test_that("hsi_transect_to_sample", {
 test_that("hsi_transect_to_index", {
   x <- hsi_transect_to_index(trans_data)
   expect_identical(colnames(x), c("Habitat", "Index"))
-  expect_equal(x$Habitat, seq(9.8, 10.2, by = 0.05))
+  expect_equal(x$Habitat, seq(9.8, 10.15, by = 0.05))
   expect_equal(x$Index[1:2], c(0.003745318, 0.498127341))
+  
+  data <- data.frame(Distance = c(0,1), Habitat = c(1,2))
+  x <- hsi_transect_to_index(data)
+  expect_equal(x$Index, c(0, 1, 0.001001001), tolerance = 1e-06)
 })
   

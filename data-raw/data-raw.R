@@ -4,4 +4,12 @@ hsi_data <- data.frame(Habitat = as.double(1:10),
 
 hsi_data <- tibble::as_tibble(hsi_data)
 
-devtools::use_data(hsi_data)
+
+trans_data <- data.frame(Distance = c(1,2,2.5,3,4,6),
+                            Habitat = c(10,10.1,10.15,10.15,10,9.85))
+
+hsi_data <- tibble::as_tibble(hsi_data)
+trans_data <- tibble::as_tibble(trans_data)
+
+devtools::use_data(hsi_data, overwrite = TRUE)
+devtools::use_data(trans_data, overwrite = TRUE)

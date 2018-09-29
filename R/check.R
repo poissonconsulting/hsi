@@ -22,9 +22,7 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   if(identical(habitat, index))
     err("arguments 'habitat' and 'index' must specify different columns")
 
-  check_colnames(x, c(habitat, index))
-
-  check_data(x, nrow = TRUE, x_name = x_name)
+  check_data(x, c(habitat, index), nrow = TRUE, x_name = x_name)
 
   check_vector(x[[habitat]], 1, unique = TRUE, sorted = TRUE, x_name =
                  paste0("column '", habitat, "' of ", x_name))
@@ -33,7 +31,7 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
                  paste0("column '", index, "' of ", x_name))
   
   by <- force(by)
-  check_scalar(by, c(0, 1000))
+  check_scalar(by, c(0.001, 1000))
   
   diff <- diff(x[[habitat]])
   if(any(diff != diff[1]))
@@ -42,5 +40,23 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   if(hsi_by(x[[habitat]]) != by) 
     err(paste0("column '", habitat, "' of ", x_name, 
                " increments must be ", by, " not ", hsi_by(x[[habitat]])))
+  invisible(x)
+}
+
+check_transect <- function(x, distance = "Distance", habitat = "Habitat",
+                      x_name = substitute(x)) {
+  x_name <- deparse(x_name)
+  check_string(distance)
+  check_string(habitat)
+  check_data(x, c(distance, habitat), nrow = TRUE)
+
+  if(identical(distance, habitat))
+    err("arguments 'distance' and 'habitat' must specify different columns")
+
+  check_vector(x[[distance]], 1, unique = TRUE, sorted = TRUE, x_name =
+                 paste0("column '", distance, "' of ", x_name))
+
+  check_vector(x[[habitat]], 1, x_name =
+                 paste0("column '", habitat, "' of ", x_name))
   invisible(x)
 }

@@ -12,7 +12,8 @@ License: MIT + file LICENSE
 Depends: R (>= 3.4.0)
 Imports:
     err,
-    checkr
+    checkr,
+    stats
 Suggests: 
     covr,
     ggplot2,

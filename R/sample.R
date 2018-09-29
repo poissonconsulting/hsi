@@ -11,21 +11,15 @@ hsi_sample_to_index <- function(x, by = hsi_by(x)) {
   check_vector(x, 1, length = TRUE)
   check_scalar(by, c(0.0001, 1000))
   
-  min <- min(x)
-  max <- max(x)
-  min <- min - min %% by - by
-  max <- max + max %% by + by
-  
-  habitat <- seq(min, max, by = by)    
-  
-  data <- data.frame(Habitat = habitat)
+  data <- data.frame(Habitat = seq_by(x, by = by))
   if(requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
   rownames(data) <- NULL
   
-  index <- cut(x, breaks = c(habitat, max + by), right = FALSE)
+  index <- cut(x, breaks = c(data$Habitat), right = FALSE)
   index <- table(index)
   index <- as.vector(index)
+  data <- data[-nrow(data),]
   data$Index <- index / max(index)
-  data <- data[-c(1, nrow(data)),]
+  data <- data[-1,]
   data
 }

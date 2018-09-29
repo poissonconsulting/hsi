@@ -21,3 +21,7 @@ You can install the released version of hsi from
 ``` r
 install.packages("hsi")
 ```
+
+Please note that the ‘hsi’ project is released with a [Contributor Code
+of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
+agree to abide by its terms.

@@ -14,7 +14,8 @@ hsi_transect_to_index(x, distance = "Distance", habitat = "Habitat",
 
 \item{habitat}{A string of the column name with habitat values.}
 
-\item{by}{A non-negative number of the habitat increments.}
+\item{by}{A non-negative number of the habitat increments.
+If by = NULL then does not check habitat increments}
 
 \item{n}{A count of the number of samples to take.}
 }

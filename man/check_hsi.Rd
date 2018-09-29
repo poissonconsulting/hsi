@@ -14,7 +14,8 @@ check_hsi(x, habitat = "Habitat", index = "Index",
 
 \item{index}{A string of the name of the column with index values.}
 
-\item{by}{A non-negative number of the habitat increments.}
+\item{by}{A non-negative number of the habitat increments.
+If by = NULL then does not check habitat increments}
 
 \item{x_name}{A string of the name of the object.}
 }
@@ -22,7 +23,7 @@ check_hsi(x, habitat = "Habitat", index = "Index",
 An invisible copy of the original object.
 }
 \description{
-Check HSI Data
+A HSI data frame is a data frame with a column of habitat and index values.
 }
 \examples{
 check_hsi(hsi_data)

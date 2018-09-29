@@ -3,7 +3,6 @@
 export(check_hsi)
 export(hsi_by)
 export(hsi_pref)
-export(hsi_set_by)
 export(hsi_use)
 import(checkr)
 import(err)

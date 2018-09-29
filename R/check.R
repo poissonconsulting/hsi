@@ -24,7 +24,7 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
 
   check_colnames(x, c(habitat, index))
 
-  check_data(x, nrow = TRUE, key = habitat, x_name = x_name)
+  check_data(x, nrow = TRUE, x_name = x_name)
 
   check_vector(x[[habitat]], 1, unique = TRUE, sorted = TRUE, x_name =
                  paste0("column '", habitat, "' of ", x_name))
@@ -34,6 +34,10 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   
   by <- force(by)
   check_scalar(by, c(0, 1000))
+  
+  diff <- diff(x[[habitat]])
+  if(any(diff != diff[1]))
+    err("column '", habitat, "' of ", x_name, "must have equal increments")
   
   if(hsi_by(x[[habitat]]) != by) 
     err(paste0("column '", habitat, "' of ", x_name, 

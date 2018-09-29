@@ -10,7 +10,7 @@ hsi_by(x)
 \item{x}{A numeric vector of habitat values.}
 }
 \value{
-A number of the habitat increments.
+The smallest habitat increment.
 }
 \description{
 HSI By

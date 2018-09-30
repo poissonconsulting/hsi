@@ -22,9 +22,6 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   check_string(index)
   check_string(x_name)
   
-  if(identical(habitat, index))
-    err("arguments 'habitat' and 'index' must specify different columns")
-  
   check_data(x, c(habitat, index), nrow = TRUE, x_name = x_name)
   
   check_vector(x[[habitat]], 1, unique = TRUE, sorted = TRUE, x_name =
@@ -54,15 +51,22 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   invisible(x)
 }
 
+#' Check Transect
+#' 
+#' A transect data frame is a data frame with a column of distance and habitat values.
+#' 
+#' @inheritParams checkr::check_data
+#' @param distance A string of the name of the column with distance values.
+#' @param habitat A string of the name of the column with habitat values.
+#'
+#' @return An invisible copy of the original object.
+#' @export
 check_transect <- function(x, distance = "Distance", habitat = "Habitat",
                            x_name = substitute(x)) {
   x_name <- deparse(x_name)
   check_string(distance)
   check_string(habitat)
   check_data(x, c(distance, habitat), nrow = TRUE)
-  
-  if(identical(distance, habitat))
-    err("arguments 'distance' and 'habitat' must specify different columns")
   
   check_vector(x[[distance]], 1, unique = TRUE, sorted = TRUE, x_name =
                  paste0("column '", distance, "' of ", x_name))
@@ -71,4 +75,3 @@ check_transect <- function(x, distance = "Distance", habitat = "Habitat",
                  paste0("column '", habitat, "' of ", x_name))
   invisible(x)
 }
-

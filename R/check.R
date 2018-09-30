@@ -51,16 +51,6 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   invisible(x)
 }
 
-#' Check Transect
-#' 
-#' A transect data frame is a data frame with a column of distance and habitat values.
-#' 
-#' @inheritParams checkr::check_data
-#' @param distance A string of the name of the column with distance values.
-#' @param habitat A string of the name of the column with habitat values.
-#'
-#' @return An invisible copy of the original object.
-#' @export
 check_transect <- function(x, distance = "Distance", habitat = "Habitat",
                            x_name = substitute(x)) {
   x_name <- deparse(x_name)

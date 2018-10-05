@@ -33,4 +33,13 @@ test_that("set_by",{
   expect_identical(x$Index[1:2], c(1,1))
   expect_identical(x$Habitat[90:91], c(9.9,10))
   expect_equal(x$Index[90:91], c(0.01,0))
+  
+  hsi <- data.frame(Habitat = seq(0,2,by = 0.1),
+                    Index = c(0,0,0,0.05,0.1,0.15,0.2,0.4,0.6,0.8,1,1,1,1,1,1,0.8,0.6,0.4,0.2,0))
+  
+  expect_identical(check_hsi(hsi), hsi)
+  hsi <- hsi_set_by(hsi, by = 0.01)
+  expect_identical(check_hsi(hsi), hsi)
+  
+  
 })

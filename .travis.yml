@@ -1,6 +1,11 @@
 language: R
 cache: packages
 
+addons:
+  apt:
+    packages:
+      - libgit2-dev
+      
 r_packages:
   - covr
 

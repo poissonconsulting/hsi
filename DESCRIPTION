@@ -17,7 +17,7 @@ Suggests:
     testthat,
     tibble
 Remotes:
-    poissonconsulting/err
+    poissonconsulting/err,
     poissonconsulting/checkr
 Encoding: UTF-8
 LazyData: true

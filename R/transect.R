@@ -12,7 +12,6 @@
 #' hsi_transect_to_sample(trans_data, n = 10)
 hsi_transect_to_sample <- function(x, distance = "Distance", habitat = "Habitat", n = 10^6) {
   check_transect(x, distance, habitat)
-
   stats::approx(x = x[[distance]], y = x[[habitat]], n = n)$y
 }
 

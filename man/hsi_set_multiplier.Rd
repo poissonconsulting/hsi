@@ -4,7 +4,8 @@
 \alias{hsi_set_multiplier}
 \title{HSI Multiplier}
 \usage{
-hsi_set_multiplier(x, hsi_multi = hsi_multiplier(x))
+hsi_set_multiplier(x, habitat = "Habitat", index = "Index",
+  hsi_multi = hsi_multiplier(x))
 }
 \arguments{
 \item{x}{A HSI object.}

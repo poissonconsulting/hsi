@@ -1,3 +1,8 @@
+check_hsi_multiplier <- function(x, x_name = substitute(x)) {
+  x_name <- deparse(x_name)
+  check_scalar(x, c(1e-06, 1e+06), x_name = x_name)
+}
+
 #' Check HSI Data
 #'
 #' A HSI data frame is a data frame with an integer Habitat column 
@@ -38,9 +43,9 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   
   if(unique && sorted && x[[habitat]][nrow(x)] - x[[habitat]][1] != nrow(x) - 1L)
     err("column '", habitat, "' of ", x_name, " must be consecutive values")
-
-  check_scalar(hsi_multi, c(1e-06, 1e+06))
-
+  
+  check_hsi_multiplier(hsi_multi)
+  
   if(hsi_multiplier(x) != hsi_multi) 
     err(paste0("hsi multiplier of '", x_name, 
                "' must be ", hsi_multi, " not ", hsi_multiplier(x)))

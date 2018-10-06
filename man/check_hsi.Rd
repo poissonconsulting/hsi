@@ -5,7 +5,8 @@
 \title{Check HSI Data}
 \usage{
 check_hsi(x, habitat = "Habitat", index = "Index",
-  by = hsi_by(x[[habitat]]), x_name = substitute(x))
+  hsi_multi = hsi_multiplier(x), unique = TRUE, sorted = unique,
+  x_name = substitute(x))
 }
 \arguments{
 \item{x}{The object to check.}
@@ -14,8 +15,9 @@ check_hsi(x, habitat = "Habitat", index = "Index",
 
 \item{index}{A string of the name of the column with index values.}
 
-\item{by}{A non-negative number of the habitat increments.
-If by = NULL then does not check habitat increments}
+\item{unique}{A flag indicating whether the habitat values must be unique.}
+
+\item{sorted}{A flag indicating whether the habitat values must be sorted.}
 
 \item{x_name}{A string of the name of the object.}
 }
@@ -23,7 +25,9 @@ If by = NULL then does not check habitat increments}
 An invisible copy of the original object.
 }
 \description{
-A HSI data frame is a data frame with a column of habitat and index values.
+A HSI data frame is a data frame with an integer Habitat column 
+and a double Index column and an optional attribute hsi_multiplier 
+indicating the habitat multiplier.
 }
 \examples{
 check_hsi(hsi_data)

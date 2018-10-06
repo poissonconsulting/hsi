@@ -1,12 +1,14 @@
 #' Check HSI Data
 #'
-#' A HSI data frame is a data frame with a column of habitat and index values.
+#' A HSI data frame is a data frame with an integer Habitat column 
+#' and a double Index column and an optional attribute hsi_multiplier 
+#' indicating the habitat multiplier.
 #' 
 #' @inheritParams checkr::check_data
 #' @param habitat A string of the name of the column with habitat values.
 #' @param index A string of the name of the column with index values.
-#' @param by A non-negative number of the habitat increments.
-#' If by = NULL then does not check habitat increments
+#' @param unique A flag indicating whether the habitat values must be unique.
+#' @param sorted A flag indicating whether the habitat values must be sorted.
 #'
 #' @return An invisible copy of the original object.
 #' @export
@@ -14,45 +16,40 @@
 #' @examples
 #' check_hsi(hsi_data)
 check_hsi <- function(x, habitat = "Habitat", index = "Index", 
-                      by = hsi_by(x[[habitat]]),
+                      hsi_multi = hsi_multiplier(x),
+                      unique = TRUE,
+                      sorted = unique,
                       x_name = substitute(x)) {
   x_name <- deparse(x_name)
   
   check_string(habitat)
   check_string(index)
   check_string(x_name)
+  check_flag(unique)
+  check_flag(sorted)
   
   check_data(x, c(habitat, index), nrow = TRUE, x_name = x_name)
   
-  check_vector(x[[habitat]], 1, unique = TRUE, sorted = TRUE, x_name =
+  check_vector(x[[habitat]], 1L, unique = unique, sorted = sorted, x_name =
                  paste0("column '", habitat, "' of ", x_name))
   
   check_vector(x[[index]], c(0, 1), x_name =
                  paste0("column '", index, "' of ", x_name))
   
-  by <- force(by)
-  checkor(check_scalar(by, c(0.001, 1000)), check_null(by))
-  
-  if(!is.null(by)) {
-    diff <- diff(x[[habitat]])
-    if(!all(vapply(diff, all.equal, TRUE, diff[1],
-                   check.attributes = FALSE)))
-      err("column '", habitat, "' of ", x_name, " must have equal increments")
-    
-    if(hsi_by(x[[habitat]]) != by) 
-      err(paste0("column '", habitat, "' of ", x_name, 
-                 " increments must be ", by, " not ", hsi_by(x[[habitat]])))
-    
-    seq_by <- hsi_seq_by(x[[habitat]])
-    if(!x[[habitat]][1] %in% seq_by[1:2]) {
-      err(paste0("column '", habitat, "' of ", x_name, 
-                 " must have ", seq_by[2], " in its sequence"))
-    }
-  }
+  if(unique && sorted && x[[habitat]][nrow(x)] - x[[habitat]][1] != nrow(x) - 1L)
+    err("column '", habitat, "' of ", x_name, " must be consecutive values")
+
+  check_scalar(hsi_multi, c(1e-06, 1e+06))
+
+  if(hsi_multiplier(x) != hsi_multi) 
+    err(paste0("hsi multiplier of '", x_name, 
+               "' must be ", hsi_multi, " not ", hsi_multiplier(x)))
   invisible(x)
 }
 
 #' Check Transect
+#' 
+#' A transect data frame is a data frame with an unique sorted double Distance column and a double Habitat column.
 #'
 #' @inheritParams checkr::check_data
 #' @param distance A string of the name of the column with distance values.

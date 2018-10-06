@@ -7,7 +7,7 @@
 hsi_plot(x, habitat = "Habitat", index = "Index")
 }
 \arguments{
-\item{x}{A data frame with}
+\item{x}{A HSI data frame.}
 
 \item{habitat}{A string of the name of the column with habitat values.}
 

@@ -13,9 +13,6 @@ hsi_set_by(x, habitat = "Habitat", index = "Index",
 \item{habitat}{A string of the name of the column with habitat values.}
 
 \item{index}{A string of the name of the column with index values.}
-
-\item{by}{A non-negative number of the habitat increments.
-If by = NULL then does not check habitat increments}
 }
 \value{
 A HSI data.

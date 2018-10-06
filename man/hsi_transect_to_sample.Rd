@@ -5,7 +5,7 @@
 \title{Transect to Sample}
 \usage{
 hsi_transect_to_sample(x, distance = "Distance", habitat = "Habitat",
-  n = 1000L)
+  n = 10^6)
 }
 \arguments{
 \item{x}{A data frame.}

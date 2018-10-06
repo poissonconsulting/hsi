@@ -9,5 +9,5 @@ test_that("pref", {
 test_that("pref and use", {
   pref <- hsi_pref(hsi_data, hsi_data)
   use <- hsi_use(hsi_data, pref)
-  expect_identical(use, hsi_data[1:9,])
+  expect_equal(use, hsi_data[1:9,])
 })

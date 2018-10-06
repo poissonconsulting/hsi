@@ -14,10 +14,9 @@ status](https://codecov.io/gh/poissonconsulting/hsi/branch/master/graph/badge.sv
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 `hsi` is an R package to manipulate Habitat Suitability (HSI) data
-frames. A HSI data frame is a data frame with a Habitat and Index column
-where the Habitat values are an increasing equidistant sequence of
-numbers that includes 0 or if extended would include 0 and the index
-values are between 0 and 1.
+frames. A HSI data frame is a data frame with a Habitat (integer) and
+Index (double) column where the Habitat values are an increasing
+continous sequence and the index values are between 0 and 1.
 
 ## Installation
 

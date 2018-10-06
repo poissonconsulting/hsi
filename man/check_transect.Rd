@@ -20,7 +20,7 @@ check_transect(x, distance = "Distance", habitat = "Habitat",
 An invisible copy of the original object.
 }
 \description{
-Check Transect
+A transect data frame is a data frame with an unique sorted double Distance column and a double Habitat column.
 }
 \examples{
 check_transect(trans_data)

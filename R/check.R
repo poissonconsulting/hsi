@@ -5,6 +5,7 @@
 #' 
 #' @param habitat A string of the name of the column with habitat values.
 #' @param index A string of the name of the column with index values.
+#' @inheritParams hsi_seq_by
 #' @param unique A flag indicating whether the habitat values must be unique.
 #' @param sorted A flag indicating whether the habitat values must be sorted.
 #' @inheritParams checkr::check_data
@@ -14,6 +15,7 @@
 #' @examples
 #' check_hsi(hsi_data)
 check_hsi <- function(x, habitat = "Habitat", index = "Index", 
+                      by = hsi_by(x[[habitat]]),
                       unique = TRUE,
                       sorted = unique,
                       x_name = substitute(x)) {
@@ -27,11 +29,23 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   
   check_data(x, c(habitat, index), x_name = x_name)
   
+  check_scalar(by, c(0.001, 1000))
+  
   check_vector(x[[habitat]], 1, unique = unique, sorted = sorted, x_name =
                  paste0("column '", habitat, "' of ", x_name))
   
   check_vector(x[[index]], c(0, 1), x_name =
                  paste0("column '", index, "' of ", x_name))
+  
+  if(!is.null(by)) {
+    if(hsi_by(x[[habitat]]) != by) 
+      err(paste0("column '", habitat, "' of ", x_name, 
+                 " increments must be ", by, " not ", hsi_by(x[[habitat]])))
+    
+    diff <- diff(sort(unique(x[[habitat]])))
+    if(!all(vapply(diff, all.equal, TRUE, by)))
+      err("column '", habitat, "' of ", x_name, " must have equal increments")
+  }
   invisible(x)
 }
 

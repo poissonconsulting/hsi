@@ -4,15 +4,18 @@
 \alias{check_hsi}
 \title{Check HSI Data}
 \usage{
-check_hsi(x, habitat = "Habitat", index = "Index", unique = TRUE,
-  sorted = unique, x_name = substitute(x))
+check_hsi(x, habitat = "Habitat", index = "Index",
+  by = hsi_by(x[[habitat]]), unique = TRUE, sorted = unique,
+  x_name = substitute(x))
 }
 \arguments{
-\item{x}{The object to check.}
+\item{x}{A vector of habitat values}
 
 \item{habitat}{A string of the name of the column with habitat values.}
 
 \item{index}{A string of the name of the column with index values.}
+
+\item{by}{A number of the increments.}
 
 \item{unique}{A flag indicating whether the habitat values must be unique.}
 

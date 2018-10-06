@@ -8,7 +8,7 @@ check_transect(x, distance = "Distance", habitat = "Habitat",
   unique = TRUE, sorted = unique, x_name = substitute(x))
 }
 \arguments{
-\item{x}{The object to check.}
+\item{x}{A vector of habitat values}
 
 \item{distance}{A string of the name of the column with distance values.}
 

@@ -10,7 +10,7 @@
 #' hsi_use(hsi_data, hsi_data)
 hsi_use <- function(pref, avail, habitat = "Habitat", index = "Index") {
   check_hsi(pref, habitat = habitat, index = index)
-  check_hsi(avail, habitat = habitat, index = index)
+  check_hsi(avail, habitat = habitat, index = index, by = hsi_by(pref[[habitat]]))
 
   pref <- pref[c(habitat, index)]
   avail <- avail[c(habitat, index)]

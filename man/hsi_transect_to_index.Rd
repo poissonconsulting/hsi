@@ -5,7 +5,7 @@
 \title{Transect to HSI Index}
 \usage{
 hsi_transect_to_index(x, distance = "Distance", habitat = "Habitat",
-  hsi_multi = 1, n = 10^6)
+  by = 1, n = 10^6)
 }
 \arguments{
 \item{x}{A data frame.}
@@ -13,6 +13,8 @@ hsi_transect_to_index(x, distance = "Distance", habitat = "Habitat",
 \item{distance}{A string of the column name with transect distance values.}
 
 \item{habitat}{A string of the column name with habitat values.}
+
+\item{by}{A number of the increments.}
 
 \item{n}{A count of the number of samples to take.}
 }

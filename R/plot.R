@@ -12,8 +12,6 @@ hsi_plot <- function(x, habitat = "Habitat", index = "Index") {
   
   requireNamespace("ggplot2")
   
-  x[[habitat]] <- x[[habitat]] * hsi_multiplier(x)
-
   ggplot2::ggplot(data = x, ggplot2::aes_string(x = habitat, y = index)) +
     ggplot2::geom_line() +
     ggplot2::expand_limits(y = c(0,1))

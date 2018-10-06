@@ -10,8 +10,7 @@
 #' hsi_pref(hsi_data, hsi_data)
 hsi_pref <- function(use, avail, habitat = "Habitat", index = "Index") {
   check_hsi(use, habitat = habitat, index = index)
-  hsi_multi <- hsi_multiplier(use)
-  check_hsi(avail, habitat = habitat, index = index, hsi_multi = hsi_multi)
+  check_hsi(avail, habitat = habitat, index = index)
   
   use <- use[c(habitat, index)]
   avail <- avail[c(habitat, index)]
@@ -22,7 +21,6 @@ hsi_pref <- function(use, avail, habitat = "Habitat", index = "Index") {
   pref[[index]] <- pref[[paste0(index, ".x")]] / pref[[paste0(index, ".y")]]
   pref[[index]] <- pref[[index]] / max(pref[[index]])
   pref <- pref[c(habitat, index)]
-  attr(pref, "hsi_multi") <- hsi_multi
 
   if(requireNamespace("tibble", quietly = TRUE)) pref <- tibble::as_tibble(pref)
   rownames(pref) <- NULL

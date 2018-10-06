@@ -2,22 +2,21 @@
 % Please edit documentation in R/by.R
 \name{hsi_seq_by}
 \alias{hsi_seq_by}
-\title{HSI Seq By}
+\title{HSI Sequence}
 \usage{
 hsi_seq_by(x, by = hsi_by(x))
 }
 \arguments{
-\item{x}{A numeric vector of habitat values.}
+\item{x}{A vector of habitat values}
 
-\item{by}{A non-negative number of the habitat increments.}
+\item{by}{A number of the increments.}
 }
 \value{
-A numeric vector of equal spaced values spanning the range of x.
+A vector of the sequence
 }
 \description{
-HSI Seq By
+HSI Sequence
 }
 \examples{
-hsi_seq_by(c(1,2,1.5))
-hsi_seq_by(c(1,2,1.5), by = 1)
+hsi_seq_by(c(1, 2, 1.5))
 }

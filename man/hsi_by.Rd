@@ -7,14 +7,14 @@
 hsi_by(x)
 }
 \arguments{
-\item{x}{A numeric vector of habitat values.}
+\item{x}{A vector of habitat values.}
 }
 \value{
-The smallest habitat increment.
+A number of the increments
 }
 \description{
 HSI By
 }
 \examples{
-hsi_by(c(1, 1.5, 2))
+hsi_by(c(1,2,1.5))
 }

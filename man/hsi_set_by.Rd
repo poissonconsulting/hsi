@@ -8,11 +8,13 @@ hsi_set_by(x, habitat = "Habitat", index = "Index",
   by = hsi_by(x[[habitat]]))
 }
 \arguments{
-\item{x}{The object to check.}
+\item{x}{A HSI data frame.}
 
 \item{habitat}{A string of the name of the column with habitat values.}
 
 \item{index}{A string of the name of the column with index values.}
+
+\item{by}{A number of the increments.}
 }
 \value{
 A HSI data.

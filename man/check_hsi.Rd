@@ -4,9 +4,8 @@
 \alias{check_hsi}
 \title{Check HSI Data}
 \usage{
-check_hsi(x, habitat = "Habitat", index = "Index",
-  hsi_multi = hsi_multiplier(x), unique = TRUE, sorted = unique,
-  x_name = substitute(x))
+check_hsi(x, habitat = "Habitat", index = "Index", unique = TRUE,
+  sorted = unique, x_name = substitute(x))
 }
 \arguments{
 \item{x}{The object to check.}
@@ -25,9 +24,8 @@ check_hsi(x, habitat = "Habitat", index = "Index",
 An invisible copy of the original object.
 }
 \description{
-A HSI data frame is a data frame with an integer Habitat column 
-and a double Index column and an optional attribute hsi_multiplier 
-indicating the habitat multiplier.
+A HSI data frame is a data frame with a Habitat column 
+and Index column.
 }
 \examples{
 check_hsi(hsi_data)

@@ -5,14 +5,18 @@
 \title{Check Transect}
 \usage{
 check_transect(x, distance = "Distance", habitat = "Habitat",
-  x_name = substitute(x))
+  unique = TRUE, sorted = unique, x_name = substitute(x))
 }
 \arguments{
 \item{x}{The object to check.}
 
 \item{distance}{A string of the name of the column with distance values.}
 
-\item{habitat}{A string of the name of the column with habitat values}
+\item{habitat}{A string of the name of the column with habitat values.}
+
+\item{unique}{A flag indicating whether the distance values must be unique.}
+
+\item{sorted}{A flag indicating whether the distance values must be sorted.}
 
 \item{x_name}{A string of the name of the object.}
 }
@@ -20,7 +24,7 @@ check_transect(x, distance = "Distance", habitat = "Habitat",
 An invisible copy of the original object.
 }
 \description{
-A transect data frame is a data frame with an unique sorted double Distance column and a double Habitat column.
+A transect data frame is a data frame with Distance column and a Habitat column.
 }
 \examples{
 check_transect(trans_data)

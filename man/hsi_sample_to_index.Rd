@@ -4,12 +4,12 @@
 \alias{hsi_sample_to_index}
 \title{Sample to Index}
 \usage{
-hsi_sample_to_index(x, hsi_multi = 1)
+hsi_sample_to_index(x, by = hsi_by(x))
 }
 \arguments{
 \item{x}{A double vector of habitat values.}
 
-\item{hsi_multi}{The hsi multiplier for the resultant object}
+\item{by}{The increments for the hsi Habitat values.}
 }
 \value{
 A hsi data frame with columns Habitat and Index.
@@ -18,6 +18,5 @@ A hsi data frame with columns Habitat and Index.
 Sample to Index
 }
 \examples{
-hsi_sample_to_index(runif(100, 1, 2))
-hsi_sample_to_index(runif(100, 1, 2), hsi_multi = 0.1)
+hsi_sample_to_index(runif(100, 1, 2), by = 0.1)
 }

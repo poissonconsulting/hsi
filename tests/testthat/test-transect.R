@@ -20,3 +20,11 @@ test_that("hsi_transect_to_index", {
   x <- hsi_transect_to_index(data)
   expect_equal(x$Index, c(0, 1, 1.000001e-06, 0), tolerance = 1e-06)
 })
+
+test_that("hsi_transect_set_by", {
+  x <- hsi_transect_set_by(trans_data)
+  expect_identical(x$Distance[1:2], c(1, 1.5))
+  expect_identical(x$Habitat[1:2], c(10, 10.05))
+  expect_identical(hsi_transect_set_by(x, by = 1), 
+                   hsi_transect_set_by(trans_data, by = 1))
+})

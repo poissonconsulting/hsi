@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hsi</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9004</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9005</span>
       </span>
     </div>
 
@@ -110,11 +110,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A double vector.</p></td>
+      <td><p>A double vector of habitat values.</p></td>
     </tr>
     <tr>
       <th>by</th>
-      <td><p>A non-negative number of the habitat increments.</p></td>
+      <td><p>The increments for the hsi Habitat values.</p></td>
     </tr>
     </table>
     
@@ -124,19 +124,21 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hsi_sample_to_index</span>(<span class='fu'>runif</span>(<span class='fl'>100</span>, <span class='fl'>1</span>, <span class='fl'>2</span>), <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</div><div class='output co'>#&gt; # A tibble: 10 x 2
+    <pre class="examples"><div class='input'><span class='fu'>hsi_sample_to_index</span>(<span class='fu'>runif</span>(<span class='fl'>100</span>, <span class='fl'>1</span>, <span class='fl'>2</span>), <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</div><div class='output co'>#&gt; # A tibble: 12 x 2
 #&gt;    Habitat Index
 #&gt;      &lt;dbl&gt; &lt;dbl&gt;
-#&gt;  1     1   0.857
-#&gt;  2     1.1 0.571
-#&gt;  3     1.2 0.786
-#&gt;  4     1.3 0.786
-#&gt;  5     1.4 1    
-#&gt;  6     1.5 0.714
-#&gt;  7     1.6 0.714
-#&gt;  8     1.7 0.714
-#&gt;  9     1.8 0.429
-#&gt; 10     1.9 0.571</div></pre>
+#&gt;  1     0.9 0    
+#&gt;  2     1   0.857
+#&gt;  3     1.1 0.571
+#&gt;  4     1.2 0.786
+#&gt;  5     1.3 0.786
+#&gt;  6     1.4 1    
+#&gt;  7     1.5 0.714
+#&gt;  8     1.6 0.714
+#&gt;  9     1.7 0.714
+#&gt; 10     1.8 0.429
+#&gt; 11     1.9 0.571
+#&gt; 12     2   0    </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

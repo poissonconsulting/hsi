@@ -32,7 +32,8 @@
 
 <meta property="og:title" content="Check HSI Data — check_hsi" />
 
-<meta property="og:description" content="A HSI data frame is a data frame with a column of habitat and index values." />
+<meta property="og:description" content="A HSI data frame is a data frame with a Habitat column 
+and Index column." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hsi</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9004</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9005</span>
       </span>
     </div>
 
@@ -99,19 +100,21 @@
 
     <div class="ref-description">
     
-    <p>A HSI data frame is a data frame with a column of habitat and index values.</p>
+    <p>A HSI data frame is a data frame with a Habitat column 
+and Index column.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>check_hsi</span>(<span class='no'>x</span>, <span class='kw'>habitat</span> <span class='kw'>=</span> <span class='st'>"Habitat"</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"Index"</span>,
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'><a href='hsi_by.html'>hsi_by</a></span>(<span class='no'>x</span><span class='kw'>[[</span><span class='no'>habitat</span>]]), <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>))</pre>
+  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'><a href='hsi_by.html'>hsi_by</a></span>(<span class='no'>x</span><span class='kw'>[[</span><span class='no'>habitat</span>]]), <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='no'>unique</span>,
+  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The object to check.</p></td>
+      <td><p>A vector of habitat values</p></td>
     </tr>
     <tr>
       <th>habitat</th>
@@ -123,8 +126,15 @@
     </tr>
     <tr>
       <th>by</th>
-      <td><p>A non-negative number of the habitat increments.
-If by = NULL then does not check habitat increments</p></td>
+      <td><p>A number of the increments.</p></td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td><p>A flag indicating whether the habitat values must be unique.</p></td>
+    </tr>
+    <tr>
+      <th>sorted</th>
+      <td><p>A flag indicating whether the habitat values must be sorted.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

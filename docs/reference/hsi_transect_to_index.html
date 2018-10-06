@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hsi</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9004</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9005</span>
       </span>
     </div>
 
@@ -104,7 +104,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>hsi_transect_to_index</span>(<span class='no'>x</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"Distance"</span>, <span class='kw'>habitat</span> <span class='kw'>=</span> <span class='st'>"Habitat"</span>,
-  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fu'><a href='hsi_by.html'>hsi_by</a></span>(<span class='no'>x</span><span class='kw'>[[</span><span class='no'>habitat</span>]]), <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1000L</span>)</pre>
+  <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10</span>^<span class='fl'>6</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -123,8 +123,7 @@
     </tr>
     <tr>
       <th>by</th>
-      <td><p>A non-negative number of the habitat increments.
-If by = NULL then does not check habitat increments</p></td>
+      <td><p>A number of the increments.</p></td>
     </tr>
     <tr>
       <th>n</th>
@@ -138,17 +137,13 @@ If by = NULL then does not check habitat increments</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>hsi_transect_to_index</span>(<span class='no'>trans_data</span>)</div><div class='output co'>#&gt; # A tibble: 8 x 2
-#&gt;   Habitat   Index
-#&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-#&gt; 1    9.8  0.00375
-#&gt; 2    9.85 0.498  
-#&gt; 3    9.9  0.498  
-#&gt; 4    9.95 0.502  
-#&gt; 5   10.   0.622  
-#&gt; 6   10.1  0.622  
-#&gt; 7   10.1  1      
-#&gt; 8   10.2  0      </div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>hsi_transect_to_index</span>(<span class='no'>trans_data</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 2
+#&gt;   Habitat Index
+#&gt;     &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1       8 0    
+#&gt; 2       9 0.667
+#&gt; 3      10 1    
+#&gt; 4      11 0    </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

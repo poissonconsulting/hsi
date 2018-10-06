@@ -32,7 +32,7 @@
 
 <meta property="og:title" content="Check Transect — check_transect" />
 
-<meta property="og:description" content="Check Transect" />
+<meta property="og:description" content="A transect data frame is a data frame with Distance column and a Habitat column." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">hsi</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9004</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9005</span>
       </span>
     </div>
 
@@ -99,19 +99,19 @@
 
     <div class="ref-description">
     
-    <p>Check Transect</p>
+    <p>A transect data frame is a data frame with Distance column and a Habitat column.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>check_transect</span>(<span class='no'>x</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"Distance"</span>, <span class='kw'>habitat</span> <span class='kw'>=</span> <span class='st'>"Habitat"</span>,
-  <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>))</pre>
+  <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>sorted</span> <span class='kw'>=</span> <span class='no'>unique</span>, <span class='kw'>x_name</span> <span class='kw'>=</span> <span class='fu'>substitute</span>(<span class='no'>x</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The object to check.</p></td>
+      <td><p>A vector of habitat values</p></td>
     </tr>
     <tr>
       <th>distance</th>
@@ -119,7 +119,15 @@
     </tr>
     <tr>
       <th>habitat</th>
-      <td><p>A string of the name of the column with habitat values</p></td>
+      <td><p>A string of the name of the column with habitat values.</p></td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td><p>A flag indicating whether the distance values must be unique.</p></td>
+    </tr>
+    <tr>
+      <th>sorted</th>
+      <td><p>A flag indicating whether the distance values must be sorted.</p></td>
     </tr>
     <tr>
       <th>x_name</th>

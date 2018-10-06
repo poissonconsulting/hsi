@@ -35,4 +35,4 @@ To install the latest development version from the Poisson drat
 
 Please note that the ‘hsi’ project is released with a [Contributor Code
 of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
-agree to abide by its terms.
+agree to abide by its terms

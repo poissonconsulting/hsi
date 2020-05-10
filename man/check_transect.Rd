@@ -4,8 +4,14 @@
 \alias{check_transect}
 \title{Check Transect}
 \usage{
-check_transect(x, distance = "Distance", habitat = "Habitat",
-  unique = TRUE, sorted = unique, x_name = substitute(x))
+check_transect(
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  unique = TRUE,
+  sorted = unique,
+  x_name = substitute(x)
+)
 }
 \arguments{
 \item{x}{A vector of habitat values}

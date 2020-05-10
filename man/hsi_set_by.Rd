@@ -4,8 +4,7 @@
 \alias{hsi_set_by}
 \title{HSI Set By}
 \usage{
-hsi_set_by(x, habitat = "Habitat", index = "Index",
-  by = hsi_by(x[[habitat]]))
+hsi_set_by(x, habitat = "Habitat", index = "Index", by = hsi_by(x[[habitat]]))
 }
 \arguments{
 \item{x}{A HSI data frame.}

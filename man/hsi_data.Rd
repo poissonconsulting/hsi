@@ -4,7 +4,9 @@
 \name{hsi_data}
 \alias{hsi_data}
 \title{HSI Data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10 rows and 2 columns.
+}
 \usage{
 hsi_data
 }

@@ -4,7 +4,9 @@
 \name{trans_data}
 \alias{trans_data}
 \title{Transect Data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6 rows and 2 columns.
+}
 \usage{
 trans_data
 }

@@ -4,8 +4,13 @@
 \alias{hsi_transect_to_index}
 \title{Transect to HSI Index}
 \usage{
-hsi_transect_to_index(x, distance = "Distance", habitat = "Habitat",
-  by = 1, n = 10^6)
+hsi_transect_to_index(
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  by = 1,
+  n = 10^6
+)
 }
 \arguments{
 \item{x}{A data frame.}

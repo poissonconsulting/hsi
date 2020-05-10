@@ -4,8 +4,12 @@
 \alias{hsi_transect_set_by}
 \title{Transect Set By}
 \usage{
-hsi_transect_set_by(x, distance = "Distance", habitat = "Habitat",
-  by = hsi_by(x[[distance]]))
+hsi_transect_set_by(
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  by = hsi_by(x[[distance]])
+)
 }
 \arguments{
 \item{x}{A vector of habitat values}

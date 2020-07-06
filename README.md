@@ -4,12 +4,10 @@
 # hsi
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build
-status](https://travis-ci.org/poissonconsulting/hsi.svg?branch=master)](https://travis-ci.org/poissonconsulting/hsi)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/hsi?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/hsi)
-[![Coverage
-status](https://codecov.io/gh/poissonconsulting/hsi/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/hsi?branch=master)
+[![R build
+status](https://github.com/poissonconsulting/hsi/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/hsi/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/poissonconsulting/hsi/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/hsi?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
@@ -33,6 +31,8 @@ To install the latest development version from the Poisson drat
     drat::addRepo("poissonconsulting")
     install.packages("hsi")
 
-Please note that the ‘hsi’ project is released with a [Contributor Code
-of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
-agree to abide by its terms
+## Code of Conduct
+
+Please note that the hsi project is released with a [Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

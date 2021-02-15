@@ -1,5 +1,3 @@
-context("use")
-
 test_that("use", {
   use <- hsi_use(hsi_data, hsi_data)
   expect_identical(use$Habitat, hsi_data$Habitat)

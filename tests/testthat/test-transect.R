@@ -1,5 +1,3 @@
-context("transect")
-
 test_that("hsi_transect_to_sample", {
   x <- hsi_transect_to_sample(trans_data, n = 1000L)
   expect_identical(length(x), 1000L)

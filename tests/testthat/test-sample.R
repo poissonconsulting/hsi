@@ -1,5 +1,3 @@
-context("sample")
-
 test_that("sample_to_index", {
   expect_equal(hsi_sample_to_index(c(1.01, 1.99), by = 1), 
                tibble::tibble(Habitat = c(0,1,2), Index = c(0, 1, 0)))

@@ -1,5 +1,3 @@
-context("data")
-
 test_that("hsi_data", {
   expect_identical(check_hsi(hsi_data), hsi_data)
 })

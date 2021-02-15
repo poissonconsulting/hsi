@@ -1,5 +1,3 @@
-context("pref")
-
 test_that("pref", {
   avail <- hsi_data
   avail$Index[avail$Index == 0] <- 1

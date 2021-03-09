@@ -25,13 +25,6 @@ To install the latest development version from
     # install.packages("devtools")
     devtools::install_github("poissonconsulting/hsi")
 
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    # install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("hsi")
-
 ## Code of Conduct
 
 Please note that the hsi project is released with a [Contributor Code of

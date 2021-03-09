@@ -21,18 +21,17 @@ test_that("seq_by",{
 })
 
 test_that("set_by",{
-   expect_identical(hsi_set_by(hsi_data), hsi_data)
+  expect_identical(hsi_set_by(hsi_data), hsi_data)
   expect_identical(hsi_set_by(hsi_data, by = 2), 
-                    tibble::tibble(Habitat = c(0,2,4,6,8,10),
-                                   Index = c(0,1, 0.5, 0.4, 0.2, 0)))
+                   tibble::tibble(Habitat = c(0,2,4,6,8,10),
+                                  Index = c(0,1, 0.5, 0.4, 0.2, 0)))
   expect_identical(hsi_set_by(hsi_data, by = 2.5), 
-                    tibble::tibble(Habitat = c(0,2.5,5,7.5,10),
-                                   Index = c(0,1, 0.5, 0.25, 0)))
+                   tibble::tibble(Habitat = c(0,2.5,5,7.5,10),
+                                  Index = c(0,1, 0.5, 0.25, 0)))
   x <- hsi_set_by(hsi_data, by = 0.1)
-  expect_identical(nrow(x), 91L)
-  expect_equal(x$Habitat[1:3], c(1,1.1,1.2))
-  expect_equal(x$Index[1:3], c(0,0.1,0.2))
-  expect_identical(x$Habitat[90:91], c(9.9,10))
-  expect_equal(x$Index[90:91], c(0.01,0))
+  expect_identical(nrow(x), 92L)
+  expect_equal(x$Habitat[1:3], c(0.9, 1, 1.1))
+  expect_equal(x$Index[1:3], c(0,0,0.1))
+  expect_identical(x$Habitat[90:91], c(9.8,9.9))
+  expect_equal(x$Index[90:91], c(0.02,0.01))
 })
-

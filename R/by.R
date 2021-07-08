@@ -7,7 +7,9 @@
 #' @examples
 #' hsi_by(c(1,2,1.5))
 hsi_by <- function(x) {
-  check_vector(x, 1, length = TRUE)
+  chk_vector(x)
+  check_values(x, 1)
+  check_dim(x, values = TRUE)
   x <- unique(x)
   x <- sort(x)
   x <- diff(x)
@@ -26,8 +28,11 @@ hsi_by <- function(x) {
 #' @examples
 #' hsi_seq_by(c(1, 2, 1.5))
 hsi_seq_by <- function(x, by = hsi_by(x)) {
-  check_vector(x, 1, length = TRUE)
-  check_scalar(by, c(0.001, 1000))
+  chk_vector(x)
+  check_values(x, 1)
+  check_dim(x, values = TRUE)
+  chk_scalar(by)
+  chk_range(by, c(0.001, 1000))
   
   min <- min(x)
   max <- max(x)
@@ -50,7 +55,8 @@ hsi_seq_by <- function(x, by = hsi_by(x)) {
 #' hsi_set_by(hsi_data, by = 2)
 hsi_set_by <- function(x, habitat = "Habitat", index = "Index", by = hsi_by(x[[habitat]])) {
   check_hsi(x, habitat, index, unique = TRUE)
-  check_scalar(by, c(0.001, 1000))
+  chk_scalar(by)
+  chk_range(by, c(0.001, 1000))
   
   seq <- hsi_seq_by(x[[habitat]], by = by)
   seq <- seq[-c(1,length(seq))]

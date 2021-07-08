@@ -42,7 +42,8 @@ hsi_transect_to_index <- function(
 #' hsi_transect_set_by(trans_data)
 hsi_transect_set_by <- function(x, distance = "Distance", habitat = "Habitat", by = hsi_by(x[[distance]])) {
   check_transect(x, distance, habitat)
-  check_scalar(by, c(0.001, 1000))
+  chk_scalar(by)
+  chk_range(by, c(0.001, 1000))
   
   seq <- hsi_seq_by(x[[distance]], by = by)
   data <- data.frame(Distance = seq)

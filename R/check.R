@@ -21,21 +21,25 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
                       x_name = substitute(x)) {
   x_name <- deparse(x_name)
   
-  check_string(habitat)
-  check_string(index)
-  check_flag(unique)
-  check_flag(sorted)
-  check_string(x_name)
+  chk_string(habitat)
+  chk_string(index)
+  chk_flag(unique)
+  chk_flag(sorted)
+  chk_string(x_name)
   
-  check_data(x, c(habitat, index), x_name = x_name)
+  check_names(x, c(habitat, index), x_name = x_name)
   
-  check_scalar(by, c(0.001, 1000))
+  chk_scalar(by)
+  chk_range(by, c(0.001, 1000))
   
-  check_vector(x[[habitat]], 1, unique = unique, sorted = sorted, x_name =
-                 paste0("column '", habitat, "' of ", x_name))
-  
-  check_vector(x[[index]], c(0, 1), x_name =
-                 paste0("column '", index, "' of ", x_name))
+  chk_vector(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
+  check_values(x[[habitat]], 1, x_name = paste0("column '", habitat, "' of ", x_name))
+  chk_unique(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
+  chk_sorted(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
+
+  chk_vector(x[[index]], x_name = paste0("column '", index, "' of ", x_name))
+  check_values(x[[index]], c(0, 1), x_name = paste0("column '", index, "' of ", x_name))
+
   
   if(!is.null(by)) {
     if(hsi_by(x[[habitat]]) != by) 
@@ -68,18 +72,20 @@ check_transect <- function(x, distance = "Distance", habitat = "Habitat",
                            x_name = substitute(x)) {
   x_name <- deparse(x_name)
   
-  check_string(distance)
-  check_string(habitat)
-  check_flag(unique)
-  check_flag(sorted)
-  check_string(x_name)
+  chk_string(distance)
+  chk_string(habitat)
+  chk_flag(unique)
+  chk_flag(sorted)
+  chk_string(x_name)
   
-  check_data(x, c(distance, habitat))
+  check_names(x, c(distance, habitat))
   
-  check_vector(x[[distance]], 1, unique = unique, sorted = sorted, x_name =
-                 paste0("column '", distance, "' of ", x_name))
+  chk_vector(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
+  check_values(x[[distance]], 1, x_name = paste0("column '", distance, "' of ", x_name))
+  chk_unique(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
+  chk_sorted(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
   
-  check_vector(x[[habitat]], 1, x_name =
-                 paste0("column '", habitat, "' of ", x_name))
+  chk_vector(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
+  check_values(x[[habitat]], 1, x_name = paste0("column '", habitat, "' of ", x_name))
   invisible(x)
 }

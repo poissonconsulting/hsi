@@ -8,8 +8,11 @@
 #' @examples
 #' hsi_sample_to_index(runif(100, 1, 2), by = 0.1)
 hsi_sample_to_index <- function(x, by = hsi_by(x)) {
-  check_vector(x, 1, length = TRUE)
-  check_scalar(by, c(0.0001, 1000))
+  chk_vector(x)
+  check_values(x, 1)
+  check_dim(x, values = TRUE)
+  chk_scalar(by)
+  chk_range(by, c(0.0001, 1000))
   
   data <- data.frame(Habitat = hsi_seq_by(x, by = by))
 

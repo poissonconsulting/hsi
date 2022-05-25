@@ -27,7 +27,7 @@ check_hsi(
 
 \item{sorted}{A flag indicating whether the habitat values must be sorted.}
 
-\item{x_name}{A string of the name of the object x.}
+\item{x_name}{A string of the name of object x or NULL.}
 }
 \value{
 An invisible copy of the original object.

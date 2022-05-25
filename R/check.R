@@ -8,7 +8,7 @@
 #' @inheritParams hsi_seq_by
 #' @param unique A flag indicating whether the habitat values must be unique.
 #' @param sorted A flag indicating whether the habitat values must be sorted.
-#' @inheritParams checkr::check_data
+#' @inheritParams chk::check_data
 #' @return An invisible copy of the original object.
 #' @export
 #'

@@ -3,14 +3,14 @@
 
 # hsi
 
-[![Lifecycle:
+<!-- badges: start --> [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R build
-status](https://github.com/poissonconsulting/hsi/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/hsi/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/hsi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/hsi/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/hsi/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/hsi?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/hsi/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/hsi)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+<!-- badges: end -->
 
 `hsi` is an R package to manipulate Habitat Suitability (HSI) data
 frames. A HSI data frame is a data frame with a Habitat (integer) and

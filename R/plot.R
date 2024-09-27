@@ -12,7 +12,7 @@ hsi_plot <- function(x, habitat = "Habitat", index = "Index") {
   
   requireNamespace("ggplot2")
   
-  ggplot2::ggplot(data = x, ggplot2::aes_string(x = habitat, y = index)) +
+  ggplot2::ggplot(data = x, ggplot2::aes(x = .data[[habitat]], y = .data[[index]])) +
     ggplot2::geom_line() +
     ggplot2::expand_limits(y = c(0,1))
 }

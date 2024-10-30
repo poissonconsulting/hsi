@@ -33,7 +33,7 @@ check_hsi(
 An invisible copy of the original object.
 }
 \description{
-A HSI data frame is a data frame with a Habitat column 
+A HSI data frame is a data frame with a Habitat column
 and Index column.
 }
 \examples{

@@ -13,7 +13,7 @@ hsi_sample_to_index <- function(x, by = hsi_by(x)) {
   check_dim(x, values = TRUE)
   chk_scalar(by)
   chk_range(by, c(0.0001, 1000))
-  
+
   data <- data.frame(Habitat = hsi_seq_by(x, by = by))
 
   index <- cut(x, breaks = data$Habitat, right = FALSE)
@@ -21,10 +21,10 @@ hsi_sample_to_index <- function(x, by = hsi_by(x)) {
   index <- as.vector(index)
   index <- index / max(index)
 
-  data <- data[-nrow(data),,drop = FALSE]
+  data <- data[-nrow(data), , drop = FALSE]
   data$Index <- index
 
-  if(requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
+  if (requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
   rownames(data) <- NULL
 
   data

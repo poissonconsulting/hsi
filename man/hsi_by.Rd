@@ -16,5 +16,5 @@ A number of the increments
 HSI By
 }
 \examples{
-hsi_by(c(1,2,1.5))
+hsi_by(c(1, 2, 1.5))
 }

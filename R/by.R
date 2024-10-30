@@ -70,7 +70,8 @@ hsi_set_by <- function(x, habitat = "Habitat", index = "Index", by = hsi_by(x[[h
     data <- data[-n, ]
   }
   data$Index <- data$Index / max(data$Index)
-  if (requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
+  rlang::check_installed("tibble")
+  data <- tibble::as_tibble(data)
   rownames(data) <- NULL
 
   data

@@ -49,7 +49,8 @@ hsi_transect_set_by <- function(x, distance = "Distance", habitat = "Habitat", b
   colnames(data) <- distance
   data[[habitat]] <- stats::approx(x[[distance]], x[[habitat]], xout = seq)$y
   data <- data[!is.na(data[[habitat]]), ]
-  if (requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
+  rlang::check_installed("tibble")
+  data <- tibble::as_tibble(data)
   rownames(data) <- NULL
   data
 }

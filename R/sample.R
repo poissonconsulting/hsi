@@ -24,7 +24,8 @@ hsi_sample_to_index <- function(x, by = hsi_by(x)) {
   data <- data[-nrow(data), , drop = FALSE]
   data$Index <- index
 
-  if (requireNamespace("tibble", quietly = TRUE)) data <- tibble::as_tibble(data)
+  rlang::check_installed("tibble")
+  data <- tibble::as_tibble(data)
   rownames(data) <- NULL
 
   data

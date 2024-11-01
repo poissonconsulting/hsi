@@ -22,7 +22,8 @@ hsi_pref <- function(use, avail, habitat = "Habitat", index = "Index") {
   pref[[index]] <- pref[[index]] / max(pref[[index]])
   pref <- pref[c(habitat, index)]
 
-  if (requireNamespace("tibble", quietly = TRUE)) pref <- tibble::as_tibble(pref)
+  rlang::check_installed("tibble")
+  pref <- tibble::as_tibble(pref)
   rownames(pref) <- NULL
   pref
 }

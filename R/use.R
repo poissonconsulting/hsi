@@ -21,7 +21,8 @@ hsi_use <- function(pref, avail, habitat = "Habitat", index = "Index") {
   use[[index]] <- use[[index]] / max(use[[index]])
   use <- use[c(habitat, index)]
 
-  if (requireNamespace("tibble", quietly = TRUE)) use <- tibble::as_tibble(use)
+  rlang::check_installed("tibble")
+  use <- tibble::as_tibble(use)
   rownames(use) <- NULL
   use
 }

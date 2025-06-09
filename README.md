@@ -1,14 +1,16 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # hsi
 
 <!-- badges: start --> [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
 [![R-CMD-check](https://github.com/poissonconsulting/hsi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/hsi/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/hsi/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/hsi)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit/)
 <!-- badges: end -->
 
 `hsi` is an R package to manipulate Habitat Suitability (HSI) data

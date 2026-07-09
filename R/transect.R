@@ -11,7 +11,11 @@
 #' @examples
 #' hsi_transect_to_sample(trans_data, n = 10)
 hsi_transect_to_sample <- function(
-    x, distance = "Distance", habitat = "Habitat", n = 10^6) {
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  n = 10^6
+) {
   check_transect(x, distance, habitat)
   stats::approx(x = x[[distance]], y = x[[habitat]], n = n)$y
 }
@@ -26,7 +30,12 @@ hsi_transect_to_sample <- function(
 #' @examples
 #' hsi_transect_to_index(trans_data)
 hsi_transect_to_index <- function(
-    x, distance = "Distance", habitat = "Habitat", by = 1, n = 10^6) {
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  by = 1,
+  n = 10^6
+) {
   sample <- hsi_transect_to_sample(x, distance, habitat, n = n)
   hsi_sample_to_index(sample, by = by)
 }
@@ -39,7 +48,12 @@ hsi_transect_to_index <- function(
 #' @export
 #' @examples
 #' hsi_transect_set_by(trans_data)
-hsi_transect_set_by <- function(x, distance = "Distance", habitat = "Habitat", by = hsi_by(x[[distance]])) {
+hsi_transect_set_by <- function(
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  by = hsi_by(x[[distance]])
+) {
   check_transect(x, distance, habitat)
   chk_scalar(by)
   chk_range(by, c(0.001, 1000))

@@ -14,11 +14,15 @@
 #'
 #' @examples
 #' check_hsi(hsi_data)
-check_hsi <- function(x, habitat = "Habitat", index = "Index",
-                      by = hsi_by(x[[habitat]]),
-                      unique = TRUE,
-                      sorted = unique,
-                      x_name = substitute(x)) {
+check_hsi <- function(
+  x,
+  habitat = "Habitat",
+  index = "Index",
+  by = hsi_by(x[[habitat]]),
+  unique = TRUE,
+  sorted = unique,
+  x_name = substitute(x)
+) {
   x_name <- deparse(x_name)
 
   chk_string(habitat)
@@ -32,20 +36,42 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
   chk_scalar(by)
   chk_range(by, c(0.001, 1000))
 
-  chk_vector(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
-  check_values(x[[habitat]], 1, x_name = paste0("column '", habitat, "' of ", x_name))
-  chk_unique(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
-  chk_sorted(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
+  chk_vector(
+    x[[habitat]],
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
+  check_values(
+    x[[habitat]],
+    1,
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
+  chk_unique(
+    x[[habitat]],
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
+  chk_sorted(
+    x[[habitat]],
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
 
   chk_vector(x[[index]], x_name = paste0("column '", index, "' of ", x_name))
-  check_values(x[[index]], c(0, 1), x_name = paste0("column '", index, "' of ", x_name))
-
+  check_values(
+    x[[index]],
+    c(0, 1),
+    x_name = paste0("column '", index, "' of ", x_name)
+  )
 
   if (!is.null(by)) {
     if (hsi_by(x[[habitat]]) != by) {
       err(paste0(
-        "column '", habitat, "' of ", x_name,
-        " increments must be ", by, " not ", hsi_by(x[[habitat]])
+        "column '",
+        habitat,
+        "' of ",
+        x_name,
+        " increments must be ",
+        by,
+        " not ",
+        hsi_by(x[[habitat]])
       ))
     }
 
@@ -70,10 +96,14 @@ check_hsi <- function(x, habitat = "Habitat", index = "Index",
 #'
 #' @examples
 #' check_transect(trans_data)
-check_transect <- function(x, distance = "Distance", habitat = "Habitat",
-                           unique = TRUE,
-                           sorted = unique,
-                           x_name = substitute(x)) {
+check_transect <- function(
+  x,
+  distance = "Distance",
+  habitat = "Habitat",
+  unique = TRUE,
+  sorted = unique,
+  x_name = substitute(x)
+) {
   x_name <- deparse(x_name)
 
   chk_string(distance)
@@ -84,12 +114,32 @@ check_transect <- function(x, distance = "Distance", habitat = "Habitat",
 
   check_names(x, c(distance, habitat))
 
-  chk_vector(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
-  check_values(x[[distance]], 1, x_name = paste0("column '", distance, "' of ", x_name))
-  chk_unique(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
-  chk_sorted(x[[distance]], x_name = paste0("column '", distance, "' of ", x_name))
+  chk_vector(
+    x[[distance]],
+    x_name = paste0("column '", distance, "' of ", x_name)
+  )
+  check_values(
+    x[[distance]],
+    1,
+    x_name = paste0("column '", distance, "' of ", x_name)
+  )
+  chk_unique(
+    x[[distance]],
+    x_name = paste0("column '", distance, "' of ", x_name)
+  )
+  chk_sorted(
+    x[[distance]],
+    x_name = paste0("column '", distance, "' of ", x_name)
+  )
 
-  chk_vector(x[[habitat]], x_name = paste0("column '", habitat, "' of ", x_name))
-  check_values(x[[habitat]], 1, x_name = paste0("column '", habitat, "' of ", x_name))
+  chk_vector(
+    x[[habitat]],
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
+  check_values(
+    x[[habitat]],
+    1,
+    x_name = paste0("column '", habitat, "' of ", x_name)
+  )
   invisible(x)
 }

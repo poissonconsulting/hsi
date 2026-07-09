@@ -1,7 +1,9 @@
 test_that("hsi_transect_to_sample", {
   x <- hsi_transect_to_sample(trans_data, n = 1000L)
   expect_identical(length(x), 1000L)
-  expect_equal(x[1:5], c(10.0000, 10.0005, 10.0010, 10.0015, 10.0020),
+  expect_equal(
+    x[1:5],
+    c(10.0000, 10.0005, 10.0010, 10.0015, 10.0020),
     tolerance = 1e-06
   )
 

@@ -1,12 +1,19 @@
 test_that("by", {
   expect_identical(hsi_by(c(1, 1.5, 2)), 0.5)
   expect_identical(hsi_by(2), 0)
-  expect_error(hsi_by(numeric(0)), "`length(x)` must be greater than 0, not 0.", fixed = TRUE)
+  expect_error(
+    hsi_by(numeric(0)),
+    "`length(x)` must be greater than 0, not 0.",
+    fixed = TRUE
+  )
 })
 
 test_that("seq_by", {
   expect_identical(hsi_seq_by(1, by = 1), c(0, 1, 2, 3))
-  expect_identical(hsi_seq_by(c(1, 2, 1.5), by = 0.5), c(0.5, 1.0, 1.5, 2.0, 2.5, 3.0))
+  expect_identical(
+    hsi_seq_by(c(1, 2, 1.5), by = 0.5),
+    c(0.5, 1.0, 1.5, 2.0, 2.5, 3.0)
+  )
   expect_identical(hsi_seq_by(c(1, 2, 1.5), by = 1), c(0, 1, 2, 3, 4))
   expect_identical(hsi_seq_by(c(1, 2, 1.5), by = 2), c(-2, 0, 2, 4, 6))
   expect_identical(hsi_seq_by(c(1, 2, 1.5), by = 3), c(-3, 0, 3, 6))

@@ -55,7 +55,12 @@ hsi_seq_by <- function(x, by = hsi_by(x)) {
 #' @export
 #' @examples
 #' hsi_set_by(hsi_data, by = 2)
-hsi_set_by <- function(x, habitat = "Habitat", index = "Index", by = hsi_by(x[[habitat]])) {
+hsi_set_by <- function(
+  x,
+  habitat = "Habitat",
+  index = "Index",
+  by = hsi_by(x[[habitat]])
+) {
   check_hsi(x, habitat, index, unique = TRUE)
   chk_scalar(by)
   chk_range(by, c(0.001, 1000))

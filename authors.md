@@ -9,11 +9,11 @@
 ## Citation
 
 Thorley J (2026). *hsi: Manipulate Habitat Suitability Indices*. R
-package version 0.0.0.9006.
+package version 0.0.0.9007.
 
     @Manual{,
       title = {hsi: Manipulate Habitat Suitability Indices},
       author = {Joe Thorley},
       year = {2026},
-      note = {R package version 0.0.0.9006},
+      note = {R package version 0.0.0.9007},
     }
